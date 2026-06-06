@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandru Babaian - CV Consultant IT SAP</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .resume-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(52, 152, 219, 0.3);
+        }
+        
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 20px;
+            background: url('photo.png') center/cover;
+        }
+        
+        .name {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .title {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .summary {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #555;
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .job {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #3498db;
+            border-radius: 5px;
+        }
+        
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .company {
+            font-size: 16px;
+            color: #3498db;
+            margin-top: 2px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .country-flag {
+            display: inline-block;
+            width: 20px;
+            height: 14px;
+            margin-right: 8px;
+            border-radius: 2px;
+            vertical-align: middle;
+        }
+        
+        .flag-ro { background: linear-gradient(to right, #003da5 33%, #fdd116 33%, #fdd116 66%, #ce1126 66%); }
+        .flag-ua { background: linear-gradient(to bottom, #0057b7 50%, #ffd700 50%); }
+        .flag-ru { background: linear-gradient(to bottom, white 33%, #0039a6 33%, #0039a6 66%, #d52b1e 66%); }
+        .flag-fr { background: linear-gradient(to right, #0055a4 33%, white 33%, white 66%, #ef4135 66%); }
+        .flag-ca { 
+            background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Flag_of_Canada_%28Pantone%29.svg/20px-Flag_of_Canada_%28Pantone%29.svg.png') center/cover;
+        }
+        
+        .job-date {
+            font-size: 14px;
+            color: #666;
+            white-space: nowrap;
+        }
+        
+        .job-description {
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+        
+        .skills-list {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .languages {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .language {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 15px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .education-item {
+            margin-bottom: 8px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .education-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2px;
+        }
+        
+        .degree {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .school {
+            color: #3498db;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .year {
+            font-size: 14px;
+            color: #666;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        
+        .skill-category h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .skill-list {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                padding: 20px;
+            }
+            .job-header {
+                flex-direction: column;
+            }
+            .contact-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="resume-container">
+        <div class="header">
+            <div class="profile-photo"></div>
+            <h1 class="name">Alexandru Babaian</h1>
+            <p class="title">Consultant IT SAP | Specialist în Automatizare și Integrare Date</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span> oleksandr.babaian@isellmore.com
+                </div>
+                <div class="contact-item">
+                    <span>📱</span> +40755741613
+                </div>
+                <div class="contact-item">
+                    <span>📍</span> Constanța, România
+                </div>
+                <div class="contact-item">
+                    <a href="https://www.linkedin.com/in/oleksandr-babaian-83a803151" target="_blank" style="color: white; text-decoration: none;">
+                        <span>💼</span> LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <section class="section">
+                <h2 class="section-title">Rezumat Profesional</h2>
+                <p class="summary">
+                    Specialist IT multilingv cu experiență solidă în maparea și integrarea fluxurilor de date, 
+                    automatizarea proceselor, dezvoltarea și depanarea algoritmilor de parsare, și crearea de 
+                    query-uri complexe pentru analiza structurală a datelor. Expert în interfațarea sistemelor 
+                    terțe prin API, monitorizarea log-urilor de erori și gestionarea fluxurilor de mesaje 
+                    (XML/JSON). Demonstrez abilități analitice avansate și capacitatea de a lucra cu volume 
+                    mari de informații și probleme complexe, fiind pregătit pentru o specializare rapidă în 
+                    modulul SAP IS-U și ecosistemul SAP.
+                </p>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Experiență Profesională</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Inginer Suport IT & Specialist Automatizare</div>
+                            <div class="company">
+                                <span class="country-flag flag-ro"></span>
+                                <a href="https://isellmore.com" target="_blank" style="color: #3498db; text-decoration: none;">
+                                iSellMore SFA Solutions
+                                </a>
+                            </div>
+                        </div>
+                        <div class="job-date">Oct 2024 – Prezent</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Proiectarea și implementarea fluxurilor de date pentru interfațarea sistemelor terțe prin API, inclusiv monitorizarea log-urilor de erori și gestionarea fluxurilor de mesaje în formate XML/JSON</li>
+                            <li>Dezvoltarea algoritmilor de parsare și mapare a datelor din documente nestructurate (PDF) în baze de date relaționale, utilizând expresii regulate și depanare (debugging) avansată de cod</li>
+                            <li>Automatizarea job-urilor de fundal (Background Jobs) pentru procesarea documentelor, sincronizarea datelor și notificări inteligente, reducând intervenția manuală la zero</li>
+                            <li>Crearea de query-uri complexe SQL pentru extragerea rapoartelor, analiza structurală a tabelelor și identificarea tendințelor operaționale</li>
+                            <li>Configurarea și administrarea platformelor CRM (Monday.com) și a fluxurilor de lucru integrate, inclusiv gestionarea utilizatorilor și a permisiunilor</li>
+                            <li>Suport tehnic multilingv pentru clienți internaționali, diagnoza și rezolvarea problemelor software și hardware complexe</li>
+                            <li>Testarea funcționalității și acurateții lingvistice a aplicațiilor în versiuni localizate (română, rusă, ucraineană)</li>
+                            <li>Documentarea și raportarea cererilor clienților cu precizie lingvistică</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> Make.com, API REST, XML/JSON, SQL, JavaScript, Monday CRM, VPN, Jira, OLAP, Office 365, Microsoft Teams, Remote Desktop, Android Testing
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Broker de Asigurare</div>
+                            <div class="company">
+                                <span class="country-flag flag-ro"></span>
+                                Destine Broker de Asigurare-Reasigurare
+                            </div>
+                        </div>
+                        <div class="job-date">Feb 2024 – Prezent</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestionarea polițelor de asigurare și a relațiilor cu clienții internaționali</li>
+                            <li>Procesarea documentației multilingve și asigurarea calității materialelor traduse</li>
+                            <li>Vânzări și comunicare cu clienții în multiple limbi</li>
+                            <li>Utilizarea aplicațiilor software pentru gestiunea contractelor și evidența clienților</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Competențe:</strong> Vânzări, Asigurări, Asigurări Auto, Asigurări de Viață, Asigurări de Sănătate, Comunicare & Negociere, Documentație Multilingvă
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Ofițer Logistică</div>
+                            <div class="company">
+                                <span class="country-flag flag-ro"></span>
+                                Tulcea Humanitarian Logistics Hub
+                            </div>
+                        </div>
+                        <div class="job-date">Feb 2022 – Iul 2023</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Procesarea documentelor vamale în multiple limbi</li>
+                            <li>Gestionarea sosirii mărfurilor umanitare și a documentației aferente</li>
+                            <li>Colaborarea cu brokeri vamali internaționali</li>
+                            <li>Controlul calității documentației multilingve de transport</li>
+                            <li>Coordonarea operațiunilor de încărcare/descărcare</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Competențe:</strong> Operațiuni Vamale, Gestionare Documente, Logistică Internațională, Control Calitate, Documentație Multilingvă
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Agent Maritim</div>
+                            <div class="company">
+                                <span class="country-flag flag-ua"></span>
+                                BIO-CONSULTING UKRAINE LTD
+                            </div>
+                        </div>
+                        <div class="job-date">Sep 2018 – Feb 2022</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Înregistrarea declarațiilor navelor la sosire și plecare</li>
+                            <li>Suport multilingv pentru comisiile vamale</li>
+                            <li>Reprezentarea intereselor navelor în operațiunile portuare internaționale</li>
+                            <li>Însoțirea turiștilor cu servicii de ghidare multilingvă</li>
+                            <li>Gestionarea documentației maritime internaționale</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Competențe:</strong> Operațiuni Maritime, Declarații Vamale, Relații Internaționale, Servicii Turistice, Suport Multilingv
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Manager de Proiect</div>
+                            <div class="company">
+                                <span class="country-flag flag-ua"></span>
+                                <span class="country-flag flag-ca"></span>
+                                <a href="https://www.facebook.com/uhbdp/" target="_blank" style="color: #3498db; text-decoration: none;">
+                                Ukrainian Horticulture Business Development Project (UHBDP)
+                                </a>
+                            </div>
+                        </div>
+                        <div class="job-date">Sep 2017 – Mai 2019</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Gestionarea inițiativelor cheie pentru dezvoltarea sectorului horticol din Ucraina</li>
+                            <li>Supervizarea operațiunilor proiectului și coordonarea cu părțile interesate</li>
+                            <li>Implementarea strategiilor pentru creșterea productivității și accesul pe piață</li>
+                            <li>Facilitarea programelor de instruire pentru comunitățile agricole</li>
+                            <li>Promovarea practicilor ecologice în sectorul agricol</li>
+                            <li>Conducerea inițiativelor de marketing multicanal pentru produse agricole</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Competențe:</strong> Management de Proiect, Conducere Echipă, Planificare Strategică, Coordonare Stakeholderi, Marketing Digital, Marketing Multicanel, Dezvoltare Agricolă, Facilitare Instruire
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Broker de Asigurare – Șef Sucursală</div>
+                            <div class="company">
+                                <span class="country-flag flag-ua"></span>
+                                PJSC "TAS INSURANCE COMPANY"
+                            </div>
+                        </div>
+                        <div class="job-date">Iun 2015 – Prezent</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Supervizarea operațiunilor zilnice ale sucursalei, asigurând conformitatea cu standardele companiei</li>
+                            <li>Gestionarea și instruirea echipelor pentru îmbunătățirea performanței și satisfacției clienților</li>
+                            <li>Dezvoltarea și implementarea strategiilor de vânzări și marketing</li>
+                            <li>Monitorizarea performanței sucursalei prin analiză financiară</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Șef Departament Daune</div>
+                            <div class="company">
+                                <span class="country-flag flag-ua"></span>
+                                INSURANCE PJSC "KRONA"
+                            </div>
+                        </div>
+                        <div class="job-date">Mar 2008 – Iun 2015</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Evaluarea și analiza daunelor clienților cu grad ridicat de acuratețe</li>
+                            <li>Gestionarea documentației multilingve de daune și procesarea acesteia</li>
+                            <li>Asigurarea calculării despăgubirilor în conformitate cu termenii polițelor</li>
+                            <li>Optimizarea proceselor interne și reducerea timpului de soluționare</li>
+                            <li>Suport de urgență și comunicare clară cu clienții internaționali</li>
+                            <li>Menținerea unui nivel ridicat de satisfacție a clienților peste barierele lingvistice</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Competențe:</strong> Evaluare Daune, Optimizare Procese, Comunicare cu Clienții, Asigurare Calitate, Suport Multilingv, Microsoft Office
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Specialist Service Desk</div>
+                            <div class="company">
+                                <span class="country-flag flag-ro"></span>
+                                <span class="country-flag flag-ua"></span>
+                                Freelance
+                            </div>
+                        </div>
+                        <div class="job-date">Mar 2007 – Prezent</div>
+                    </div>
+                    <div class="job-description">
+                        <ul>
+                            <li>Înregistrarea și rezolvarea problemelor tehnice pe multiple platforme și în multiple limbi</li>
+                            <li>Procesarea cererilor de service și suport tehnic prin diverse canale de comunicare</li>
+                            <li>Testarea aplicațiilor web și mobile pentru acuratețea localizării</li>
+                            <li>Executarea cazurilor de testare pentru asigurarea calității lingvistice și funcționale</li>
+                            <li>Planificarea și implementarea modificărilor IT, inclusiv cerințe de localizare</li>
+                            <li>Monitorizarea sistemelor pentru prevenirea problemelor și investigarea problemelor recurente</li>
+                            <li>Colaborarea cu echipe internaționale pentru rezolvarea problemelor de compatibilitate cross-lingvistică</li>
+                        </ul>
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> Windows, Linux, VPN, Active Directory, Networking, Office 365, Windows Server, Microsoft Exchange, Google Docs, ServiceNow, Administrare Rețea, Testare Localizare
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Educație</h2>
+                <div class="education-item">
+                    <div class="degree">Distribuitor Autorizat de Asigurare și Manager de Reasigurare</div>
+                    <div class="education-content">
+                        <div class="school">
+                            <span class="country-flag flag-ro"></span>
+                            Institutul de Studii Financiare (ISF)
+                        </div>
+                        <div class="year">2024</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">MBA – Erasmus pentru Tineri Antreprenori</div>
+                    <div class="education-content">
+                        <div class="school">
+                            <span class="country-flag flag-ro"></span>
+                            Programul Tinerilor Antreprenori
+                        </div>
+                        <div class="year">2024</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Masterat – Contabilitate și Audit</div>
+                    <div class="education-content">
+                        <div class="school">
+                            <span class="country-flag flag-ua"></span>
+                            Universitatea Agrară de Stat din Odesa
+                        </div>
+                        <div class="year">2007–2008</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">Masterat – Agronomie</div>
+                    <div class="education-content">
+                        <div class="school">
+                            <span class="country-flag flag-ua"></span>
+                            Universitatea Agrară de Stat din Odesa
+                        </div>
+                        <div class="year">2002–2007</div>
+                    </div>
+                </div>
+                <div class="education-item">
+                    <div class="degree">MBA – Viticultură</div>
+                    <div class="education-content">
+                        <div class="school">
+                            <span class="country-flag flag-fr"></span>
+                            Domaine GUILLOT-BROUX
+                        </div>
+                        <div class="year">2004–2005</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Limbi Străine</h2>
+                <div class="languages">
+                    <div class="language">
+                        <span><strong><span class="country-flag flag-ro"></span>Română</strong></span>
+                        <span>Nativ</span>
+                    </div>
+                    <div class="language">
+                        <span><strong><span class="country-flag flag-ua"></span>Ucraineană</strong></span>
+                        <span>Avansat</span>
+                    </div>
+                    <div class="language">
+                        <span><strong><span class="country-flag flag-ru"></span>Rusă</strong></span>
+                        <span>Avansat</span>
+                    </div>
+                    <div class="language">
+                        <span><strong><span class="country-flag flag-fr"></span>Franceză</strong></span>
+                        <span>Avansat</span>
+                    </div>
+                    <div class="language">
+                        <span><strong>🇺🇸 Engleză</strong></span>
+                        <span>Intermediar</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Competențe Tehnice</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h4>Automatizare & Integrare Date</h4>
+                        <div class="skill-list">
+                            Make.com, API REST/SOAP, fluxuri de date, interfațare sisteme, gestionare mesaje XML/JSON, parsare date, expresii regulate
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Baze de Date & Raportare</h4>
+                        <div class="skill-list">
+                            SQL (query-uri complexe, analiză structurală tabele), OLAP, Microsoft Excel avansat, analiză date, raportare
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>SAP (cunoștințe în pregătire)</h4>
+                        <div class="skill-list">
+                            LSMW, IDOC-uri, SAP PI, tranzacții de monitorizare sistem, user exit-uri, enhancement-uri, ABAP & debugging, creare query-uri, programare job-uri
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Dezvoltare & Scripting</h4>
+                        <div class="skill-list">
+                            JavaScript, Node.js, regex, parsare date, dezvoltare API, serverless, automatizare job-uri de fundal
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Platformă & Infrastructură</h4>
+                        <div class="skill-list">
+                            Windows Server, Linux, VPN, Active Directory, Office 365, Microsoft Exchange, ServiceNow, administrare rețea
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h4>AI & Automatizare Inteligentă</h4>
+                        <div class="skill-list">
+                            Integrare ChatGPT/Claude API, dezvoltare boți Telegram/WhatsApp, automatizare social media, workflow automation
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2 class="section-title">Proiecte & Studii de Caz</h2>
+                
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Sistem CRM & Automatizare Monday.com</div>
+                            <div class="company">
+                                <span>📊</span>
+                                Platformă de Gestionare a Relațiilor cu Clienții
+                            </div>
+                        </div>
+                        <div class="job-date">
+                            <span style="color: #666; font-size: 14px;">Monday.com & Make.com</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        Platformă completă de gestionare a relațiilor cu clienții cu fluxuri de lucru automatizate. Include gestionarea bazei de date a clienților, ciclul de viață al contractelor, urmărire financiară și notificări automate pentru reînnoiri și calculul comisioanelor.
+                        
+                        <div style="margin-top: 15px;">
+                            <strong>Caracteristici Principale:</strong>
+                            <ul style="margin-top: 8px;">
+                                <li>Gestionare completă a bazei de date a clienților cu categorisirea contractelor</li>
+                                <li>Notificări automate de expirare a contractelor și fluxuri de reînnoire</li>
+                                <li>Gestionare informații de contact cu istoricul comunicării</li>
+                                <li>Urmărire lunară a comisioanelor și recompenselor de asigurare</li>
+                                <li>Funcționalități avansate de căutare și filtrare</li>
+                                <li>Instrumente de backup și monitorizare a datelor</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> Monday.com Platform, Make.com API, Automatizare Fluxuri, Urmărire Financiară, Gestionare Baze de Date
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <img src="img3.JPG" alt="Monday.com CRM Dashboard" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Platformă Automatizare Social Media</div>
+                            <div class="company">
+                                <span>📱</span>
+                                Sistem Automat de Postare Facebook/Instagram/TikTok
+                            </div>
+                        </div>
+                        <div class="job-date">
+                            <span style="color: #666; font-size: 14px;">Make.com & Integrare AI</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        Sistem complet automatizat de gestionare a rețelelor sociale care parsează conținut din pagini Facebook sursă, rescrie inteligent conținutul folosind AI și publică pe multiple platforme fără intervenție umană.
+
+                        <div style="margin-top: 15px;">
+                            <strong>Caracteristici Principale:</strong>
+                            <ul style="margin-top: 8px;">
+                                <li>Parsare automată a conținutului din pagini Facebook publice</li>
+                                <li>Rescriere și adaptare a conținutului prin AI folosind prompt-uri personalizate</li>
+                                <li>Postare automată pe multiple platforme (Facebook, Instagram, TikTok)</li>
+                                <li>Formatarea conținutului și optimizare vizuală pentru fiecare platformă</li>
+                                <li>Zero intervenție umană – flux de lucru complet automatizat</li>
+                                <li>Programare postări cu algoritmi de timing optim</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> Make.com, Facebook Graph API, Instagram API, TikTok API, Anthropic Claude API, Parsare Conținut, Automatizare Social Media
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <img src="DestineSMM.JPG" alt="Social Media Automation Dashboard" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Bot Automatizare Asigurări (Telegram)</div>
+                            <div class="company">
+                                <span>🤖</span>
+                                Flux Automat de Procesare a Documentelor de Asigurare
+                            </div>
+                        </div>
+                        <div class="job-date">
+                            <span style="color: #666; font-size: 14px;">Make.com Automation</span>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        Flux de lucru automatizat pentru procesarea documentelor de asigurare prin intermediul Telegram. Primește documente PDF, extrage date cheie și actualizează automat dashboard-ul Monday.com cu informații despre polițe și notificări pentru clienți.
+
+                        <div style="margin-top: 15px;">
+                            <strong>Caracteristici Principale:</strong>
+                            <ul style="margin-top: 8px;">
+                                <li>Procesare documente PDF prin bot Telegram</li>
+                                <li>Extragere automată a datelor folosind serviciul PDF-Extractor</li>
+                                <li>Integrare Monday.com CRM și încărcare fișiere</li>
+                                <li>Mesaje de notificare generate de AI pentru clienți</li>
+                                <li>Gestionare end-to-end a polițelor de asigurare</li>
+                            </ul>
+                        </div>
+
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> Telegram Bot API, Make.com, Monday.com API, Anthropic Claude API, Arhitectură Serverless, Parsare PDF
+                        </div>
+
+                        <div style="margin-top: 15px;">
+                            <img src="image1.JPG" alt="Insurance Automation Workflow" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">PDF-Extractor</div>
+                            <div class="company">
+                                <span>📄</span>
+                                Instrument Automat de Procesare a Documentelor
+                            </div>
+                        </div>
+                        <div class="job-date">
+                            <a href="https://github.com/Alexhohner2024/pdf-extractor" target="_blank" style="color: #3498db; text-decoration: none;">
+                                Repozitoriu GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div class="job-description">
+                        Instrument automatizat pentru extragerea datelor structurate din documente PDF. Parsează fișiere PDF încărcate și extrage date structurate folosind pattern-uri regex pentru procesare ulterioară în fluxuri de lucru business.
+                        
+                        <div style="margin-top: 15px;">
+                            <strong>Caracteristici Principale:</strong>
+                            <ul style="margin-top: 8px;">
+                                <li>Parsare PDF prin endpoint API</li>
+                                <li>Extragere date structurate folosind pattern-uri regex personalizabile</li>
+                                <li>Returnare date formatate pentru procesare automată</li>
+                                <li>Deployabil în arhitectură serverless</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skills-list">
+                            <strong>Tehnologii:</strong> JavaScript, pdf-parse, Vercel, Arhitectură Serverless, Dezvoltare API, Pattern-uri Regex
+                        </div>
+                        
+                        <div style="margin-top: 15px;">
+                            <img src="img2.JPG" alt="PDF Extractor API Response" style="width: 100%; max-width: 600px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        function printResume() {
+            window.print();
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && e.key === 'p') {
+                e.preventDefault();
+                printResume();
+            }
+        });
+    </script>
+</body>
+</html>
